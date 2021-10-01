@@ -49,16 +49,16 @@ public class Registration {
         }
     }
     /*
-     * password rule two passed at least one upper case letter and having eight
-     * characters
+     * password rule two passed at least one upper case letter,having eight
+     * characters and at least one numeric number
      */
     public void passwordRulesValidation() {
         System.out.println("Enter your password: ");
         String password = input.next();
-        if (Pattern.matches("^(?=.*[A-Z])[a-zA-Z]{8,}$", password)) {
+        if (Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$", password)) {
         } else {
             System.out.println(
-                    "Invalid password format minimum eight characters and one upper case required for passing rule one");
+                    "Invalid password format minimum eight characters,one upper case and one numeric number required for passing rule one");
             passwordRulesValidation();
         }
     }
