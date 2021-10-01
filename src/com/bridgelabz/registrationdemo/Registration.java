@@ -55,7 +55,7 @@ public class Registration {
     public void passwordRulesValidation() {
         System.out.println("Enter your password: ");
         String password = input.next();
-        if (Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$", password)) {
+        if (Pattern.matches("^(?=.*[A-Z])(?=.*[0-9])(?=.*\\W)[a-zA-Z0-9\\#]{8,}$", password)) {
         } else {
             System.out.println(
                     "Invalid password format minimum eight characters,one upper case and one numeric number required for passing rule one");
