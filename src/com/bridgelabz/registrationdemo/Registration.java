@@ -30,12 +30,22 @@ public class Registration {
     }
     // Email Validation
     public void EmailAddressValidation() {
-        System.out.println("Enter your Email Address ");
+        System.out.println("Enter your Email Address: ");
         String Email = input.next();
         if (Pattern.matches("^[a-z]{3,}\\@[a-z]*\\.[a-z]*$", Email)) {
         } else {
             System.out.println("Invalid email id re-enter your Email Address");
             EmailAddressValidation();
+        }
+    }
+    // Mobile Number validation
+    public void MobileNumberValidation() {
+        System.out.println("Enter your Mobile Number: ");
+        String Mobile = input.next();
+        if (Pattern.matches("^(\\+91)?[6-9]{1}[0-9]{9}$", Mobile)) {
+        } else {
+            System.out.println("Invalid Mobile number re-enter your mobile number");
+            MobileNumberValidation();
         }
     }
         public static void main (String[]args){
@@ -44,5 +54,6 @@ public class Registration {
             validation.firstNameValidation();
             validation.lastNameValidation();
             validation.EmailAddressValidation();
+            validation.MobileNumberValidation();
         }
 }
